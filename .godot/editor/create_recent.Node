@@ -1,0 +1,10 @@
+CollisionShape3D
+StaticBody3D
+MeshInstance3D
+DirectionalLight3D
+AnimationPlayer
+CharacterBody3D
+Camera3D
+Node3D
+Node2D
+Node

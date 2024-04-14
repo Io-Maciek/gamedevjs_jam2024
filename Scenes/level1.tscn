@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceje4xnusn7yy"]
+
+[ext_resource type="PackedScene" uid="uid://bolp4wfnq5vnr" path="res://Scenes/Prefabs/player.tscn" id="1_qpyxx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vwggn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nlenn"]
+size = Vector3(1.37439, 0.0427246, 1.26721)
+
+[node name="Node" type="Node"]
+
+[node name="GameScene" type="Node3D" parent="."]
+
+[node name="Player" parent="GameScene" instance=ExtResource("1_qpyxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79444, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameScene"]
+transform = Transform3D(1, 0, 0, 0, 0.342512, 0.939513, 0, -0.939513, 0.342512, 0, 10.9909, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GameScene"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vwggn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameScene/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameScene/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_nlenn")

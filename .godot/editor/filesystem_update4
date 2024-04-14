@@ -1,0 +1,5 @@
+res://level1.tscn
+res://player.tscn
+res://Scenes/level1.tscn
+res://Scenes/Prefabs/player.tscn
+res://Scripts/player_movement.gd
