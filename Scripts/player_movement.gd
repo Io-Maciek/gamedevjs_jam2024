@@ -8,6 +8,7 @@ extends CharacterBody3D
 var mouseAccumulatedMovement = Vector2(0, 0)
 var is_pressing_jump:bool = false
 var is_crouched:bool = false
+var _READY_FOR_NEXT_ANIMATION:bool = true # TODO
 
 @export var mouseSensitivity = 0.1
 @export var gamepadSensitivity =  4.0
@@ -15,13 +16,18 @@ var is_crouched:bool = false
 @onready var animation = $AnimationPlayer
 @onready var sound_jump_loading = $AudioStreamLoadingJump
 @onready var crouch_ray_cast = $CrouchRayCast
+@onready var jump_slider = $CanvasLayer/MarginContainer/JumpSlider
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	pass
-
+	
+func _process(_delta):
+	if !is_pressing_jump and jump_slider.visible:
+		jump_slider.visible = false
+	
 func _physics_process(delta):
 	HandleCrouch()
 	HandleJumping()
@@ -53,12 +59,12 @@ func HandleJumping():
 		return
 	# Handle jump.
 	if is_pressing_jump:
-		if !is_on_floor():
-			StopJumpAction()
+		#if !is_on_floor():
+		#	StopJumpAction()
 		if Input.is_action_just_released("jump"):
 			StopJumpAction()
 	else:
-		animation.play("idle_better")
+		#animation.play("idle_better")
 		if Input.is_action_just_pressed("jump") and is_on_floor():
 			StartJumpAction()
 			
@@ -115,11 +121,15 @@ func StartJumpAction():
 	animation.play("jumping_better")
 
 func StopJumpAction():
-	sound_jump_loading.stop()
-	velocity.y = JUMP
+	jump_slider.visible = false
 	is_pressing_jump = false
+	sound_jump_loading.stop()
+	animation.play("idle_better")
+	velocity.y = JUMP
+	
 
 func _on_animation_player_animation_finished(anim_name):
+	_READY_FOR_NEXT_ANIMATION = true;
 	if str(anim_name) == "jumping_better":
-		animation.play("idle_better")
+		#animation.play("idle_better")
 		StopJumpAction()

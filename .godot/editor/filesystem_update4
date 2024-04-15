@@ -4,3 +4,6 @@ res://Shaders/pause_blur_background.gdshader
 res://Scenes/level1.tscn
 res://Scenes/Prefabs/cube1.tscn
 res://Scripts/player_movement.gd
+res://Scenes/Tiles/barrier_strut_gltf.tscn
+res://Scenes/Tiles/barrier_small_gltf.tscn
+res://Scenes/Tiles/gate_large_team_blue_gltf.tscn

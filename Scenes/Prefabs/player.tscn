@@ -476,7 +476,7 @@ skeleton = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_u7d04")
 }
-blend_times = [&"jumping", &"idle", 0.5, &"jumping_better", &"RESET", 0.3, &"jumping_better", &"idle", 0.5, &"jumping_better", &"idle_better", 0.5, &"idle_better", &"crouch", 0.25, &"crouch", &"idle_better", 0.25, &"crouch", &"crouch", 0.25]
+blend_times = [&"jumping", &"idle", 0.5, &"jumping_better", &"idle_better", 0.15, &"crouch", &"idle_better", 0.25, &"crouch", &"crouch", 0.25]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

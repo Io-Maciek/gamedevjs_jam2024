@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv44dma8p6r3s"]
+
+[ext_resource type="PackedScene" uid="uid://b6gb4nnf6yxop" path="res://Models/barrierSmall.gltf.glb" id="1_jw0i3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epsf4"]
+size = Vector3(2.2, 1, 0.25)
+
+[node name="barrierSmall_gltf" instance=ExtResource("1_jw0i3")]
+transform = Transform3D(1, 0, 0, 0, 1.37, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="barrierSmall" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barrierSmall/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_epsf4")

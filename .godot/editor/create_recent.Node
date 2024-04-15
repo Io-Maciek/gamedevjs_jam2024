@@ -1,10 +1,10 @@
+GridMap
+CollisionShape3D
+StaticBody3D
 RayCast3D
 Node3D
 AudioStreamPlayer3D
 AudioListener3D
-CollisionShape3D
-StaticBody3D
-GridMap
 VSlider
 HSlider
 MarginContainer
@@ -12,4 +12,3 @@ CanvasLayer
 MultiMeshInstance3D
 MeshInstance3D
 PanelContainer
-Panel
