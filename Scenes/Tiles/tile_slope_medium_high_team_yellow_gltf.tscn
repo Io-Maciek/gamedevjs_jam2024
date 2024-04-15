@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpqeo1wo1gelu"]
+
+[ext_resource type="PackedScene" uid="uid://brkc764tg0ru" path="res://Models/tileSlopeMediumHigh_teamYellow.gltf.glb" id="1_65v45"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fm5pl"]
+points = PackedVector3Array(-1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 2, -1, -1, 2, 1, 1, 1.5, 1, 1, 1.5, -1)
+
+[node name="tileSlopeMediumHigh_teamYellow_gltf" instance=ExtResource("1_65v45")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeMediumHigh_teamYellow" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeMediumHigh_teamYellow/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_fm5pl")

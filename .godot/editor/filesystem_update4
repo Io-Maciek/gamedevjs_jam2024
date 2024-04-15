@@ -1,5 +1,6 @@
-res://level1.tscn
-res://player.tscn
-res://Scenes/level1.tscn
 res://Scenes/Prefabs/player.tscn
+res://Mesh/tiles.tres
+res://Shaders/pause_blur_background.gdshader
+res://Scenes/level1.tscn
+res://Scenes/Prefabs/cube1.tscn
 res://Scripts/player_movement.gd

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibgpyqcs0r62"]
+
+[ext_resource type="PackedScene" uid="uid://c08l54tgklfwr" path="res://Models/tileSlopeMediumHigh_desert.gltf.glb" id="1_58xs8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jdehh"]
+points = PackedVector3Array(-1, 0, 1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 2, -1, -1, 2, 1, 1, 1.5, 1, 1, 1.5, -1)
+
+[node name="tileSlopeMediumHigh_desert_gltf" instance=ExtResource("1_58xs8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeMediumHigh_desert" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeMediumHigh_desert/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_jdehh")

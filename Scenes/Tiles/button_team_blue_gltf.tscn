@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://copf3b6sn0s0n"]
+
+[ext_resource type="PackedScene" uid="uid://dru8t3uqu1t8o" path="res://Models/button_teamBlue.gltf.glb" id="1_fejcl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0wq03"]
+height = 0.3
+radius = 0.75
+
+[node name="button_teamBlue_gltf" instance=ExtResource("1_fejcl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="button_teamBlue" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button_teamBlue/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.148569, 0)
+shape = SubResource("CylinderShape3D_0wq03")

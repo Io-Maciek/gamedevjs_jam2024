@@ -1,29 +1,70 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+@export var RUN_SPEED_MULTIPLIER = 1.5;
+@export var SPEED = 5.0
+@export var JUMP:float = 4.0
+
 var mouseAccumulatedMovement = Vector2(0, 0)
+var is_pressing_jump:bool = false
+var is_crouched:bool = false
+
 @export var mouseSensitivity = 0.1
 @export var gamepadSensitivity =  4.0
-@onready var camera = $Camera3D
+@onready var camera = $Body/CameraHolder/Camera3D
+@onready var animation = $AnimationPlayer
+@onready var sound_jump_loading = $AudioStreamLoadingJump
+@onready var crouch_ray_cast = $CrouchRayCast
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
+	pass
+
+func _physics_process(delta):
+	HandleCrouch()
+	HandleJumping()
+	MouseMovement()
+	Movement(delta)
 
 func _input(event):
 	if event is InputEventMouseMotion: 
 		mouseAccumulatedMovement += event.relative
 
-func _physics_process(delta):
-	MouseMovement(delta)
-	Movement(delta)
+func HandleCrouch():
+	if is_pressing_jump:
+		return
+		
+	#crouch_ray_cast.is_colliding()
+	var action_press = Input.is_action_pressed("crouch")
+	if action_press and is_on_floor():
+		if !is_crouched:
+			animation.play("crouch")
+		is_crouched = true
+	elif !action_press and !crouch_ray_cast.is_colliding():
+		if is_crouched:
+			animation.play_backwards("crouch")
+			animation.queue("idle_better")
+		is_crouched = false
 
-func MouseMovement(delta):
-	var gamepadMovement = Input.get_vector("gamepad_look_up", "gamepad_look_down", "gamepad_look_left", "gamepad_look_right")
+func HandleJumping():
+	if is_crouched:
+		return
+	# Handle jump.
+	if is_pressing_jump:
+		if !is_on_floor():
+			StopJumpAction()
+		if Input.is_action_just_released("jump"):
+			StopJumpAction()
+	else:
+		animation.play("idle_better")
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			StartJumpAction()
+			
+
+func MouseMovement():
+	var gamepadMovement:Vector2 = Input.get_vector("gamepad_look_up", "gamepad_look_down", "gamepad_look_left", "gamepad_look_right")
 	
 	rotation_degrees = Vector3(
 		rotation_degrees.x,
@@ -32,37 +73,53 @@ func MouseMovement(delta):
 	)
 	
 	
-	
+	var clamped_X_value = clamp(
+		camera.rotation_degrees.x - (mouseAccumulatedMovement.y * mouseSensitivity)
+			- (gamepadMovement.y * gamepadSensitivity),
+		-90, 
+		90
+	)
+
 	#moving only camera child in player object up and down
 	camera.rotation_degrees = Vector3(
-		clamp(
-			camera.rotation_degrees.x - (mouseAccumulatedMovement.y * mouseSensitivity)
-				- (gamepadMovement.y * gamepadSensitivity),
-			-90, 
-			90
-		),
+		clamped_X_value,
 		camera.rotation_degrees.y,
 		camera.rotation_degrees.z)
 	mouseAccumulatedMovement = Vector2(0, 0)
+
 
 func Movement(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		
+	var speed_multiplier = 1.0
+	if !is_crouched and !is_pressing_jump and Input.is_action_pressed("run"):
+		speed_multiplier = RUN_SPEED_MULTIPLIER
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("go_left", "go_right", "go_forward", "go_back")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED * speed_multiplier
+		velocity.z = direction.z * SPEED * speed_multiplier
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * speed_multiplier)
+		velocity.z = move_toward(velocity.z, 0, SPEED * speed_multiplier)
 
 	move_and_slide()
+
+func StartJumpAction():
+	is_pressing_jump = true
+	animation.play("jumping_better")
+
+func StopJumpAction():
+	sound_jump_loading.stop()
+	velocity.y = JUMP
+	is_pressing_jump = false
+
+func _on_animation_player_animation_finished(anim_name):
+	if str(anim_name) == "jumping_better":
+		animation.play("idle_better")
+		StopJumpAction()

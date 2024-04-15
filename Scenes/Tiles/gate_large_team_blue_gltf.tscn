@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvl77d43jitnl"]
+
+[ext_resource type="PackedScene" uid="uid://bgxoueuumwb5c" path="res://Models/gateLarge_teamBlue.gltf.glb" id="1_ovrbh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qo6fa"]
+height = 3.0
+radius = 0.25
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wssgs"]
+height = 1.88041
+radius = 0.25
+
+[node name="gateLarge_teamBlue_gltf" instance=ExtResource("1_ovrbh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="gateLarge_teamBlue" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gateLarge_teamBlue/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+shape = SubResource("CylinderShape3D_qo6fa")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="gateLarge_teamBlue/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 0)
+shape = SubResource("CylinderShape3D_qo6fa")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="gateLarge_teamBlue/StaticBody3D" index="2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("CylinderShape3D_wssgs")

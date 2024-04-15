@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8yqxsn7sb0re"]
+
+[ext_resource type="PackedScene" uid="uid://dxqpwmmai2nim" path="res://Models/tileHigh_desert.gltf.glb" id="1_wv5fm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndbyg"]
+
+[node name="tileHigh_desert_gltf" instance=ExtResource("1_wv5fm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_desert" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_desert/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_ndbyg")

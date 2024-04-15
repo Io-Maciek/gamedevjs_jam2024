@@ -1,0 +1,82 @@
+[gd_scene load_steps=27 format=3 uid="uid://cx51gyeuvndr7"]
+
+[ext_resource type="PackedScene" uid="uid://copf3b6sn0s0n" path="res://Scenes/Tiles/button_team_blue_gltf.tscn" id="1_5evmd"]
+[ext_resource type="PackedScene" uid="uid://blta503343gmu" path="res://Models/detail_desert.gltf.glb" id="1_ihua0"]
+[ext_resource type="PackedScene" uid="uid://c8yqxsn7sb0re" path="res://Scenes/Tiles/tile_high_desert_gltf.tscn" id="1_jdi4h"]
+[ext_resource type="PackedScene" uid="uid://d17ollmifxxea" path="res://Scenes/Tiles/button_team_red_gltf.tscn" id="2_aivnk"]
+[ext_resource type="PackedScene" uid="uid://bsj84iyclqvd2" path="res://Scenes/Tiles/tile_high_forest_gltf.tscn" id="2_yh2ls"]
+[ext_resource type="PackedScene" uid="uid://cn6bc07oqbwhi" path="res://Scenes/Tiles/tile_high_team_blue_gltf.tscn" id="3_vw0sg"]
+[ext_resource type="PackedScene" uid="uid://co6ryg2yur0dd" path="res://Scenes/Tiles/button_team_yellow_gltf.tscn" id="3_x8wpi"]
+[ext_resource type="PackedScene" uid="uid://ccf4kv5r4mhr7" path="res://Scenes/Tiles/tile_high_team_red_gltf.tscn" id="4_u1fmt"]
+[ext_resource type="PackedScene" uid="uid://deigl32l8ncdy" path="res://Scenes/Tiles/tile_high_team_yellow_gltf.tscn" id="5_3epvg"]
+[ext_resource type="PackedScene" uid="uid://dibgpyqcs0r62" path="res://Scenes/Tiles/tile_slope_medium_high_desert_gltf.tscn" id="9_7gs2o"]
+[ext_resource type="PackedScene" uid="uid://b4xkfdcopomar" path="res://Scenes/Tiles/tile_slope_medium_high_forest_gltf.tscn" id="10_nicny"]
+[ext_resource type="PackedScene" uid="uid://dfqie5bc5a1vl" path="res://Scenes/Tiles/tile_slope_medium_high_team_red_gltf.tscn" id="11_fufyl"]
+[ext_resource type="PackedScene" uid="uid://dpqeo1wo1gelu" path="res://Scenes/Tiles/tile_slope_medium_high_team_yellow_gltf.tscn" id="12_p2g5u"]
+[ext_resource type="PackedScene" uid="uid://ckqfdjj5vu5n2" path="res://Scenes/Tiles/tree_forest_gltf.tscn" id="13_1vj2x"]
+[ext_resource type="PackedScene" uid="uid://b52rnmfg8sauc" path="res://Models/detail_forest.gltf.glb" id="15_en300"]
+[ext_resource type="PackedScene" uid="uid://yxwjs60m0kyn" path="res://Models/plantA_desert.gltf.glb" id="16_543pm"]
+[ext_resource type="PackedScene" uid="uid://6estufjvx4wi" path="res://Models/plantA_forest.gltf.glb" id="17_21m44"]
+[ext_resource type="PackedScene" uid="uid://cgg2of3xw7vnl" path="res://Models/plantB_desert.gltf.glb" id="18_jwvtu"]
+[ext_resource type="PackedScene" uid="uid://dkecgig6ntten" path="res://Models/plantB_forest.gltf.glb" id="19_4hsle"]
+[ext_resource type="PackedScene" uid="uid://b2fn38e4vqa0n" path="res://Models/rocksA_forest.gltf.glb" id="20_pryq6"]
+[ext_resource type="PackedScene" uid="uid://xn7k0xo52ogp" path="res://Models/rocksA_desert.gltf.glb" id="21_hqi7n"]
+[ext_resource type="PackedScene" uid="uid://buxbsactdf4fm" path="res://Models/rocksB_desert.gltf.glb" id="22_0qr8x"]
+[ext_resource type="PackedScene" uid="uid://besipasgflrrw" path="res://Models/rocksB_forest.gltf.glb" id="23_sr5ef"]
+[ext_resource type="PackedScene" uid="uid://cvl77d43jitnl" path="res://Scenes/Tiles/gate_large_team_blue_gltf.tscn" id="24_wvru3"]
+[ext_resource type="PackedScene" uid="uid://c31tuwrrrbx66" path="res://Scenes/Tiles/gate_large_team_red_gltf.tscn" id="25_u7gwn"]
+[ext_resource type="PackedScene" uid="uid://d3u1rj4rjxmmf" path="res://Scenes/Tiles/gate_large_team_yellow_gltf.tscn" id="26_qi4f4"]
+
+[node name="CubeMain1" type="Node3D"]
+
+[node name="detail_desert_gltf" parent="." instance=ExtResource("1_ihua0")]
+
+[node name="button_teamBlue_gltf" parent="." instance=ExtResource("1_5evmd")]
+
+[node name="button_teamRed_gltf" parent="." instance=ExtResource("2_aivnk")]
+
+[node name="button_teamYellow_gltf" parent="." instance=ExtResource("3_x8wpi")]
+
+[node name="tileHigh_desert_gltf" parent="." instance=ExtResource("1_jdi4h")]
+
+[node name="tileHigh_forest_gltf" parent="." instance=ExtResource("2_yh2ls")]
+
+[node name="tileHigh_teamBlue_gltf" parent="." instance=ExtResource("3_vw0sg")]
+
+[node name="tileHigh_teamRed_gltf" parent="." instance=ExtResource("4_u1fmt")]
+
+[node name="tileHigh_teamYellow_gltf" parent="." instance=ExtResource("5_3epvg")]
+
+[node name="tileSlopeMediumHigh_desert_gltf" parent="." instance=ExtResource("9_7gs2o")]
+
+[node name="tileSlopeMediumHigh_forest_gltf" parent="." instance=ExtResource("10_nicny")]
+
+[node name="tileSlopeMediumHigh_teamRed_gltf" parent="." instance=ExtResource("11_fufyl")]
+
+[node name="tileSlopeMediumHigh_teamYellow_gltf" parent="." instance=ExtResource("12_p2g5u")]
+
+[node name="tree_forest_gltf" parent="." instance=ExtResource("13_1vj2x")]
+
+[node name="detail_forest_gltf" parent="." instance=ExtResource("15_en300")]
+
+[node name="plantA_desert_gltf" parent="." instance=ExtResource("16_543pm")]
+
+[node name="plantA_forest_gltf" parent="." instance=ExtResource("17_21m44")]
+
+[node name="plantB_desert_gltf" parent="." instance=ExtResource("18_jwvtu")]
+
+[node name="plantB_forest_gltf" parent="." instance=ExtResource("19_4hsle")]
+
+[node name="rocksA_forest_gltf" parent="." instance=ExtResource("20_pryq6")]
+
+[node name="rocksA_desert_gltf" parent="." instance=ExtResource("21_hqi7n")]
+
+[node name="rocksB_desert_gltf" parent="." instance=ExtResource("22_0qr8x")]
+
+[node name="rocksB_forest_gltf" parent="." instance=ExtResource("23_sr5ef")]
+
+[node name="gateLarge_teamBlue_gltf" parent="." instance=ExtResource("24_wvru3")]
+
+[node name="gateLarge_teamRed_gltf" parent="." instance=ExtResource("25_u7gwn")]
+
+[node name="gateLarge_teamYellow_gltf" parent="." instance=ExtResource("26_qi4f4")]

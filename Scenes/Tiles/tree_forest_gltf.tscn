@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqfdjj5vu5n2"]
+
+[ext_resource type="PackedScene" uid="uid://dwpawownb6ywc" path="res://Models/tree_forest.gltf.glb" id="1_yfpfg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tergo"]
+radius = 0.7
+height = 3.0
+
+[node name="tree_forest_gltf" instance=ExtResource("1_yfpfg")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree_forest" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_forest/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_tergo")
