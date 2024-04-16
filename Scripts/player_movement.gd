@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var SPEED = 5.0
 @export var JUMP:float = 4.0
 
+var jump_was_big:bool = false
 var mouseAccumulatedMovement = Vector2(0, 0)
 var is_pressing_jump:bool = false
 var is_crouched:bool = false
@@ -17,6 +18,9 @@ var _READY_FOR_NEXT_ANIMATION:bool = true # TODO
 @onready var sound_jump_loading = $AudioStreamLoadingJump
 @onready var crouch_ray_cast = $CrouchRayCast
 @onready var jump_slider = $CanvasLayer/MarginContainer/JumpSlider
+@onready var audio_jump = $AudioStreamJump
+@onready var audio_wind = $AudioStreamWind
+@onready var audio_landing = $AudioStreamLanding
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -28,6 +32,20 @@ func _process(_delta):
 	if !is_pressing_jump and jump_slider.visible:
 		jump_slider.visible = false
 	
+	if !is_on_floor() and jump_was_big:
+		#var vel2d = Vec(velocity.x, velocity.z)
+		#print(vel2d.length_squared() / 56.0)
+		if !audio_wind.playing:
+			audio_wind.play()
+	
+	if is_on_floor():
+		if jump_was_big:
+			audio_landing.play()
+		jump_was_big = false
+		if audio_wind.playing:
+			audio_wind.stop()
+
+
 func _physics_process(delta):
 	HandleCrouch()
 	HandleJumping()
@@ -123,9 +141,15 @@ func StartJumpAction():
 func StopJumpAction():
 	jump_slider.visible = false
 	is_pressing_jump = false
-	sound_jump_loading.stop()
-	animation.play("idle_better")
 	velocity.y = JUMP
+	if JUMP >= 5.5:
+		jump_was_big = true
+		audio_jump.volume_db = 0
+	else:
+		audio_jump.volume_db = -10
+	animation.play("idle_better")	
+	sound_jump_loading.stop()
+	audio_jump.play()
 	
 
 func _on_animation_player_animation_finished(anim_name):
