@@ -1205,9 +1205,9 @@
             xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/">
          <xmp:CreatorTool>Adobe Audition CC (Windows)</xmp:CreatorTool>
          <xmp:CreateDate>2024-04-16T15:20:01+02:00</xmp:CreateDate>
-         <xmp:MetadataDate>2024-04-16T16:02:50+02:00</xmp:MetadataDate>
-         <xmp:ModifyDate>2024-04-16T16:02:50+02:00</xmp:ModifyDate>
-         <xmpMM:InstanceID>xmp.iid:b520db74-15b1-3d45-8974-c54c975d6b7b</xmpMM:InstanceID>
+         <xmp:MetadataDate>2024-04-16T16:45:09+02:00</xmp:MetadataDate>
+         <xmp:ModifyDate>2024-04-16T16:45:09+02:00</xmp:ModifyDate>
+         <xmpMM:InstanceID>xmp.iid:02eb69c7-0fcf-1d4b-805c-4a47e6e551a0</xmpMM:InstanceID>
          <xmpMM:DocumentID>xmp.did:1bdb8408-6227-a840-8deb-8760f95a8c20</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>xmp.did:a842f926-3cd1-c248-8917-9765b28a2897</xmpMM:OriginalDocumentID>
          <xmpMM:History>
@@ -1314,6 +1314,34 @@
                   <stEvt:action>saved</stEvt:action>
                   <stEvt:instanceID>xmp.iid:b520db74-15b1-3d45-8974-c54c975d6b7b</stEvt:instanceID>
                   <stEvt:when>2024-04-16T16:02:50+02:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:ebb1d0ae-4872-6546-85bf-8af68d0c6ac5</stEvt:instanceID>
+                  <stEvt:when>2024-04-16T16:45:09+02:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:dbdcd0a5-9b79-da45-9b0c-9429efa07a78</stEvt:instanceID>
+                  <stEvt:when>2024-04-16T16:45:09+02:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:5c5eb510-72be-1548-8b92-daef741a697b</stEvt:instanceID>
+                  <stEvt:when>2024-04-16T16:45:09+02:00</stEvt:when>
+                  <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
+                  <stEvt:changed>/metadata</stEvt:changed>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <stEvt:action>saved</stEvt:action>
+                  <stEvt:instanceID>xmp.iid:02eb69c7-0fcf-1d4b-805c-4a47e6e551a0</stEvt:instanceID>
+                  <stEvt:when>2024-04-16T16:45:09+02:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Audition CC (Windows)</stEvt:softwareAgent>
                   <stEvt:changed>/</stEvt:changed>
                </rdf:li>

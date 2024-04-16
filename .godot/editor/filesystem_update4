@@ -4,3 +4,4 @@ res://Shaders/pause_blur_background.gdshader
 res://Scenes/level1.tscn
 res://Scenes/Prefabs/cube1.tscn
 res://Scripts/player_movement.gd
+res://Scripts/GamePauser.gd
