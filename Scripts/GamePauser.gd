@@ -23,11 +23,13 @@ func PauseHandle():
 
 func PauseGame():
 	get_tree().paused = true
+	Engine.time_scale = 0.0
 	visible = true
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	
 func UnPauseGame():
 	get_tree().paused = false
+	Engine.time_scale = 1.0
 	visible = false
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 

@@ -1,3 +1,5 @@
+MeshInstance3D
+WorldEnvironment
 AudioStreamPlayer
 AudioStreamPlayer3D
 GridMap
@@ -11,4 +13,3 @@ HSlider
 MarginContainer
 CanvasLayer
 MultiMeshInstance3D
-MeshInstance3D

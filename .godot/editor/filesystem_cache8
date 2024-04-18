@@ -1,17 +1,19 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1713277898
-export_presets.cfg::TextFile::-1::1713194040::0::1::::<><>::
+::res://::1713431788
+export_presets.cfg::TextFile::-1::1713369984::0::1::::<><>::
 icon.svg::CompressedTexture2D::3278751302435317657::1712841378::1712841384::1::::<><>::
-::res://Build/::1713098312
-::res://Build/web/::1713277903
-index.144x144.png::CompressedTexture2D::8314724205878600650::1713277897::1713277996::1::::<><>::
-index.180x180.png::CompressedTexture2D::7693394700722837555::1713277897::1713277996::1::::<><>::
-index.512x512.png::CompressedTexture2D::3672538004588816361::1713277897::1713277996::1::::<><>::
-index.apple-touch-icon.png::CompressedTexture2D::7222569127225559199::1713277897::1713098338::1::::<><>::
-index.icon.png::CompressedTexture2D::764961530520512386::1713277897::1713098338::1::::<><>::
-index.manifest.json::JSON::-1::1713277897::0::1::::<><>::
-index.png::CompressedTexture2D::6074607688542816287::1713277897::1713098338::1::::<><>::
-::res://Image/::1713101899
+::res://Build/::1713356470
+::res://Build/web/::1713278055
+index.144x144.png::CompressedTexture2D::8314724205878600650::1713278050::1713277996::1::::<><>::
+index.180x180.png::CompressedTexture2D::7693394700722837555::1713278050::1713277996::1::::<><>::
+index.512x512.png::CompressedTexture2D::3672538004588816361::1713278050::1713277996::1::::<><>::
+index.apple-touch-icon.png::CompressedTexture2D::7222569127225559199::1713278050::1713098338::1::::<><>::
+index.icon.png::CompressedTexture2D::764961530520512386::1713278050::1713098338::1::::<><>::
+index.manifest.json::JSON::-1::1713278050::0::1::::<><>::
+index.png::CompressedTexture2D::6074607688542816287::1713278050::1713098338::1::::<><>::
+::res://Build/win/::1713369984
+::res://Image/::1713434438
+water_normal_map.jpg::CompressedTexture2D::2165148720328120758::1713434265::1713434519::1::::<><>::
 ::res://Image/Sprites/::1713114782
 bush.png::CompressedTexture2D::2424099879515813744::1572888822::1713101899::1::::<><>::
 grass.png::CompressedTexture2D::2180006383216200612::1572888796::1713101899::1::::<><>::
@@ -30,8 +32,8 @@ tree.png::CompressedTexture2D::700207410982752482::1586703334::1713101899::1::::
 10.png::CompressedTexture2D::3550800180391631212::1713114561::1713114577::1::::<><>::
 11.png::CompressedTexture2D::8471822230527952703::1713114777::1713115159::1::::<><>::
 Bez nazwy.png::CompressedTexture2D::8702510710615090616::1713125177::1713125206::1::::<><>::
-::res://Mesh/::1713272936
-tiles.tres::MeshLibrary::8499023971253510686::1713272936::0::1::::<><>::
+::res://Mesh/::1713431807
+tiles.tres::MeshLibrary::8499023971253510686::1713431807::0::1::::<><>::
 ::res://Models/::1713172140
 arrow_teamBlue.gltf.glb::PackedScene::6072452684492101412::1599738206::1713172123::1::::<><>::
 arrow_teamRed.gltf.glb::PackedScene::4795120344771536224::1599738206::1713172123::1::::<><>::
@@ -167,13 +169,13 @@ tileSmall_teamRed.gltf.glb::PackedScene::3010522708399794799::1599738216::171317
 tileSmall_teamYellow.gltf.glb::PackedScene::5748539507526283709::1599738216::1713172106::1::::<><>::
 tree_desert.gltf.glb::PackedScene::2560761298101197180::1599738216::1713172106::1::::<><>::
 tree_forest.gltf.glb::PackedScene::8734422334798662902::1599738216::1713172106::1::::<><>::
-::res://Scenes/::1713277666
-level1.tscn::PackedScene::5072472026771999504::1713277666::0::1::::<><>::uid://bolp4wfnq5vnr::::res://Scenes/Prefabs/player.tscn<>uid://dtc8xhv6helra::::res://Mesh/tiles.tres<>res://Scripts/GamePauser.gd<>uid://b11868766d8jh::::res://Scenes/Prefabs/ButtonUIPrefab.tscn<>uid://ckqfdjj5vu5n2::::res://Scenes/Tiles/tree_forest_gltf.tscn
-::res://Scenes/Prefabs/::1713277544
+::res://Scenes/::1713432549
+level1.tscn::PackedScene::5072472026771999504::1713432549::0::1::::<><>::uid://bolp4wfnq5vnr::::res://Scenes/Prefabs/player.tscn<>uid://dtc8xhv6helra::::res://Mesh/tiles.tres<>res://Scripts/GamePauser.gd<>uid://b11868766d8jh::::res://Scenes/Prefabs/ButtonUIPrefab.tscn<>uid://ckqfdjj5vu5n2::::res://Scenes/Tiles/tree_forest_gltf.tscn
+::res://Scenes/Prefabs/::1713432549
 ButtonUIPrefab.tscn::PackedScene::4267065244414219301::1713173048::0::1::::<><>::
-cube1.tscn::PackedScene::6450706727935005350::1713277544::0::1::::<><>::uid://copf3b6sn0s0n::::res://Scenes/Tiles/button_team_blue_gltf.tscn<>uid://blta503343gmu::::res://Models/detail_desert.gltf.glb<>uid://c8yqxsn7sb0re::::res://Scenes/Tiles/tile_high_desert_gltf.tscn<>uid://d17ollmifxxea::::res://Scenes/Tiles/button_team_red_gltf.tscn<>uid://bsj84iyclqvd2::::res://Scenes/Tiles/tile_high_forest_gltf.tscn<>uid://cn6bc07oqbwhi::::res://Scenes/Tiles/tile_high_team_blue_gltf.tscn<>uid://co6ryg2yur0dd::::res://Scenes/Tiles/button_team_yellow_gltf.tscn<>uid://ccf4kv5r4mhr7::::res://Scenes/Tiles/tile_high_team_red_gltf.tscn<>uid://deigl32l8ncdy::::res://Scenes/Tiles/tile_high_team_yellow_gltf.tscn<>uid://dibgpyqcs0r62::::res://Scenes/Tiles/tile_slope_medium_high_desert_gltf.tscn<>uid://b4xkfdcopomar::::res://Scenes/Tiles/tile_slope_medium_high_forest_gltf.tscn<>uid://dfqie5bc5a1vl::::res://Scenes/Tiles/tile_slope_medium_high_team_red_gltf.tscn<>uid://dpqeo1wo1gelu::::res://Scenes/Tiles/tile_slope_medium_high_team_yellow_gltf.tscn<>uid://ckqfdjj5vu5n2::::res://Scenes/Tiles/tree_forest_gltf.tscn<>uid://b52rnmfg8sauc::::res://Models/detail_forest.gltf.glb<>uid://yxwjs60m0kyn::::res://Models/plantA_desert.gltf.glb<>uid://6estufjvx4wi::::res://Models/plantA_forest.gltf.glb<>uid://cgg2of3xw7vnl::::res://Models/plantB_desert.gltf.glb<>uid://dkecgig6ntten::::res://Models/plantB_forest.gltf.glb<>uid://b2fn38e4vqa0n::::res://Models/rocksA_forest.gltf.glb<>uid://xn7k0xo52ogp::::res://Models/rocksA_desert.gltf.glb<>uid://buxbsactdf4fm::::res://Models/rocksB_desert.gltf.glb<>uid://besipasgflrrw::::res://Models/rocksB_forest.gltf.glb<>uid://cvl77d43jitnl::::res://Scenes/Tiles/gate_large_team_blue_gltf.tscn<>uid://c31tuwrrrbx66::::res://Scenes/Tiles/gate_large_team_red_gltf.tscn<>uid://d3u1rj4rjxmmf::::res://Scenes/Tiles/gate_large_team_yellow_gltf.tscn<>uid://bpfnymhofwnkq::::res://Scenes/Tiles/barrier_strut_gltf.tscn<>uid://bv44dma8p6r3s::::res://Scenes/Tiles/barrier_small_gltf.tscn
-player.tscn::PackedScene::3392736356685921903::1713277544::0::1::::<><>::res://Scripts/player_movement.gd<>uid://bi1xi07psw187::::res://Sounds/jump_loading4a.wav<>uid://cop5o874db0uw::::res://Sounds/jump2a.wav<>uid://b30qgt0mrcdws::::res://Sounds/wind.mp3<>uid://dudieertvnyud::::res://Sounds/landing1.wav
-::res://Scenes/Tiles/::1713183626
+cube1.tscn::PackedScene::6450706727935005350::1713348836::0::1::::<><>::uid://copf3b6sn0s0n::::res://Scenes/Tiles/button_team_blue_gltf.tscn<>uid://blta503343gmu::::res://Models/detail_desert.gltf.glb<>uid://c8yqxsn7sb0re::::res://Scenes/Tiles/tile_high_desert_gltf.tscn<>uid://d17ollmifxxea::::res://Scenes/Tiles/button_team_red_gltf.tscn<>uid://bsj84iyclqvd2::::res://Scenes/Tiles/tile_high_forest_gltf.tscn<>uid://cn6bc07oqbwhi::::res://Scenes/Tiles/tile_high_team_blue_gltf.tscn<>uid://co6ryg2yur0dd::::res://Scenes/Tiles/button_team_yellow_gltf.tscn<>uid://ccf4kv5r4mhr7::::res://Scenes/Tiles/tile_high_team_red_gltf.tscn<>uid://deigl32l8ncdy::::res://Scenes/Tiles/tile_high_team_yellow_gltf.tscn<>uid://dibgpyqcs0r62::::res://Scenes/Tiles/tile_slope_medium_high_desert_gltf.tscn<>uid://b4xkfdcopomar::::res://Scenes/Tiles/tile_slope_medium_high_forest_gltf.tscn<>uid://dfqie5bc5a1vl::::res://Scenes/Tiles/tile_slope_medium_high_team_red_gltf.tscn<>uid://dpqeo1wo1gelu::::res://Scenes/Tiles/tile_slope_medium_high_team_yellow_gltf.tscn<>uid://ckqfdjj5vu5n2::::res://Scenes/Tiles/tree_forest_gltf.tscn<>uid://b52rnmfg8sauc::::res://Models/detail_forest.gltf.glb<>uid://yxwjs60m0kyn::::res://Models/plantA_desert.gltf.glb<>uid://6estufjvx4wi::::res://Models/plantA_forest.gltf.glb<>uid://cgg2of3xw7vnl::::res://Models/plantB_desert.gltf.glb<>uid://dkecgig6ntten::::res://Models/plantB_forest.gltf.glb<>uid://b2fn38e4vqa0n::::res://Models/rocksA_forest.gltf.glb<>uid://xn7k0xo52ogp::::res://Models/rocksA_desert.gltf.glb<>uid://buxbsactdf4fm::::res://Models/rocksB_desert.gltf.glb<>uid://besipasgflrrw::::res://Models/rocksB_forest.gltf.glb<>uid://cvl77d43jitnl::::res://Scenes/Tiles/gate_large_team_blue_gltf.tscn<>uid://c31tuwrrrbx66::::res://Scenes/Tiles/gate_large_team_red_gltf.tscn<>uid://d3u1rj4rjxmmf::::res://Scenes/Tiles/gate_large_team_yellow_gltf.tscn<>uid://bpfnymhofwnkq::::res://Scenes/Tiles/barrier_strut_gltf.tscn<>uid://bv44dma8p6r3s::::res://Scenes/Tiles/barrier_small_gltf.tscn
+player.tscn::PackedScene::3392736356685921903::1713432549::0::1::::<><>::res://Scripts/player_movement.gd<>uid://bi1xi07psw187::::res://Sounds/jump_loading4a.wav<>uid://cop5o874db0uw::::res://Sounds/jump2a.wav<>uid://b30qgt0mrcdws::::res://Sounds/wind.mp3<>uid://dudieertvnyud::::res://Sounds/landing1.wav
+::res://Scenes/Tiles/::1713433887
 barrier_small_gltf.tscn::PackedScene::3922020136932311574::1713183626::0::1::::<><>::uid://b6gb4nnf6yxop::::res://Models/barrierSmall.gltf.glb
 barrier_strut_gltf.tscn::PackedScene::3450408048731057560::1713182860::0::1::::<><>::uid://b77lgcka4vnvl::::res://Models/barrierStrut.gltf.glb
 button_team_blue_gltf.tscn::PackedScene::5786804533071222847::1713173714::0::1::::<><>::uid://dru8t3uqu1t8o::::res://Models/button_teamBlue.gltf.glb
@@ -182,6 +184,7 @@ button_team_yellow_gltf.tscn::PackedScene::5820556294592950101::1713173741::0::1
 gate_large_team_blue_gltf.tscn::PackedScene::6271515531906957473::1713183604::0::1::::<><>::uid://bgxoueuumwb5c::::res://Models/gateLarge_teamBlue.gltf.glb
 gate_large_team_red_gltf.tscn::PackedScene::6792993332167888913::1713175604::0::1::::<><>::uid://caukuarwl7v21::::res://Models/gateLarge_teamRed.gltf.glb
 gate_large_team_yellow_gltf.tscn::PackedScene::9167446746628543605::1713175593::0::1::::<><>::uid://bvuhdci54qxn8::::res://Models/gateLarge_teamYellow.gltf.glb
+water.tscn::PackedScene::7723980332132149085::1713433887::0::1::::<><>::uid://dfivbec8ngxlw::::res://Shaders/water.tres
 tile_high_desert_gltf.tscn::PackedScene::7139631785663597842::1713173153::0::1::::<><>::uid://dxqpwmmai2nim::::res://Models/tileHigh_desert.gltf.glb
 tile_high_forest_gltf.tscn::PackedScene::3670455175117088197::1713173307::0::1::::<><>::uid://bhhd40gt555n2::::res://Models/tileHigh_forest.gltf.glb
 tile_high_team_blue_gltf.tscn::PackedScene::5749357696812089622::1713173315::0::1::::<><>::uid://be86w4q1bpx13::::res://Models/tileHigh_teamBlue.gltf.glb
@@ -192,12 +195,13 @@ tile_slope_medium_high_forest_gltf.tscn::PackedScene::4469994097752968545::17131
 tile_slope_medium_high_team_red_gltf.tscn::PackedScene::7543730769828473245::1713174164::0::1::::<><>::uid://buiyp2ebp2t4q::::res://Models/tileSlopeMediumHigh_teamRed.gltf.glb
 tile_slope_medium_high_team_yellow_gltf.tscn::PackedScene::8245394019064362154::1713174175::0::1::::<><>::uid://brkc764tg0ru::::res://Models/tileSlopeMediumHigh_teamYellow.gltf.glb
 tree_forest_gltf.tscn::PackedScene::5508069278182367421::1713174482::0::1::::<><>::uid://dwpawownb6ywc::::res://Models/tree_forest.gltf.glb
-::res://Scripts/::1713276209
-GamePauser.gd::GDScript::-1::1713099675::0::1::::GamePause<>Control<>::
-player_movement.gd::GDScript::-1::1713276209::0::1::::<>CharacterBody3D<>::
-::res://Shaders/::1713277666
-pause_blur_background.gdshader::Shader::-1::1713277666::0::1::::<><>::
+::res://Scripts/::1713369547
+GamePauser.gd::GDScript::-1::1713278716::0::1::::GamePause<>Control<>::
+player_movement.gd::GDScript::-1::1713369547::0::1::::<>CharacterBody3D<>::
+::res://Shaders/::1713433887
 blur_shader.tres::ShaderMaterial::3433740555918453531::1713277537::0::1::::<><>::res://Shaders/pause_blur_background.gdshader
+pause_blur_background.gdshader::Shader::-1::1713433887::0::1::::<><>::
+water.tres::VisualShader::7527998348643957512::1713433887::0::1::::<><>::
 tilechoosershader.gdshader::Shader::-1::1713123944::0::1::::<><>::
 ::res://Sounds/::1713276172
 coin.mp3::AudioStreamMP3::6950404981747380349::1713273177::1713273259::1::::<><>::
@@ -216,8 +220,8 @@ jump_loading.mp3::AudioStreamMP3::3008169990197796496::1713177439::1713177444::1
 landing1.wav::AudioStreamWAV::8569725173466832611::1713276169::1713276172::1::::<><>::
 portal.mp3::AudioStreamMP3::275547094089690383::1713273246::1713273259::1::::<><>::
 wind.mp3::AudioStreamMP3::4404300973188983786::1713273948::1713274552::1::::<><>::
-::res://Sounds/music/::1713276171
-::res://Sounds/music/Conformed Files/::1713276172
+::res://Sounds/music/::1713278709
+::res://Sounds/music/Conformed Files/::1713278709
 grounding_after_jump 48000 1.wav::AudioStreamWAV::6638924029898343004::1713276141::1713276172::1::::<><>::
 jump2 48000 1.wav::AudioStreamWAV::774306360471046705::1713274068::1713274098::1::::<><>::
 jump_loading4 48000 1.wav::AudioStreamWAV::953383210914038579::1713273605::1713273659::1::::<><>::

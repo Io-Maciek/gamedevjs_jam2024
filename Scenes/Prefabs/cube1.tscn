@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cx51gyeuvndr7"]
+[gd_scene load_steps=30 format=3 uid="uid://cx51gyeuvndr7"]
 
 [ext_resource type="PackedScene" uid="uid://copf3b6sn0s0n" path="res://Scenes/Tiles/button_team_blue_gltf.tscn" id="1_5evmd"]
 [ext_resource type="PackedScene" uid="uid://blta503343gmu" path="res://Models/detail_desert.gltf.glb" id="1_ihua0"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://d3u1rj4rjxmmf" path="res://Scenes/Tiles/gate_large_team_yellow_gltf.tscn" id="26_qi4f4"]
 [ext_resource type="PackedScene" uid="uid://bpfnymhofwnkq" path="res://Scenes/Tiles/barrier_strut_gltf.tscn" id="27_i8t1p"]
 [ext_resource type="PackedScene" uid="uid://bv44dma8p6r3s" path="res://Scenes/Tiles/barrier_small_gltf.tscn" id="28_1osoh"]
+[ext_resource type="PackedScene" uid="uid://dibs3exkm3auv" path="res://Scenes/Tiles/water.tscn" id="29_4vvgw"]
 
 [node name="CubeMain1" type="Node3D"]
 
@@ -86,3 +87,5 @@
 [node name="barrierStrut_gltf" parent="." instance=ExtResource("27_i8t1p")]
 
 [node name="barrierSmall_gltf" parent="." instance=ExtResource("28_1osoh")]
+
+[node name="WaterNode" parent="." instance=ExtResource("29_4vvgw")]

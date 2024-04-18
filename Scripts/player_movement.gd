@@ -3,13 +3,18 @@ extends CharacterBody3D
 
 @export var RUN_SPEED_MULTIPLIER = 1.5;
 @export var SPEED = 5.0
-@export var JUMP:float = 4.0
+
+@export var SHOULD_JUMP_ABILITY: bool = true
+@export var JUMP:float = 0.0 # jump multiplier
+@export var MAX_JUMP_VALUE:float = 5.0 
+@export var MIN_JUMP_VALUE:float = 5.0
 
 var jump_was_big:bool = false
 var mouseAccumulatedMovement = Vector2(0, 0)
 var is_pressing_jump:bool = false
 var is_crouched:bool = false
 var _READY_FOR_NEXT_ANIMATION:bool = true # TODO
+
 
 @export var mouseSensitivity = 0.1
 @export var gamepadSensitivity =  4.0
@@ -29,8 +34,8 @@ func _ready():
 	pass
 	
 func _process(_delta):
-	if !is_pressing_jump and jump_slider.visible:
-		jump_slider.visible = false
+	#if !is_pressing_jump and jump_slider.visible:
+		#jump_slider.visible = false
 	
 	if !is_on_floor() and jump_was_big:
 		#var vel2d = Vec(velocity.x, velocity.z)
@@ -137,12 +142,15 @@ func Movement(delta):
 func StartJumpAction():
 	is_pressing_jump = true
 	animation.play("jumping_better")
+	if !SHOULD_JUMP_ABILITY:
+		StopJumpAction()
 
 func StopJumpAction():
 	jump_slider.visible = false
 	is_pressing_jump = false
-	velocity.y = JUMP
-	if JUMP >= 5.5:
+	velocity.y = JUMP * MAX_JUMP_VALUE + MIN_JUMP_VALUE
+	
+	if JUMP > 0.1:
 		jump_was_big = true
 		audio_jump.volume_db = 0
 	else:
