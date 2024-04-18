@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dibs3exkm3auv"]
+[gd_scene load_steps=5 format=3 uid="uid://dibs3exkm3auv"]
 
 [ext_resource type="Shader" uid="uid://dfivbec8ngxlw" path="res://Shaders/water.tres" id="1_0uopw"]
 
@@ -9,11 +9,20 @@ shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pj15q"]
 material = SubResource("ShaderMaterial_vgl0q")
-size = Vector2(10, 10)
-subdivide_width = 20
-subdivide_depth = 20
+subdivide_width = 5
+subdivide_depth = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_01uk3"]
+size = Vector3(2.1, 1.5, 2.1)
 
 [node name="WaterNode" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.01612)
 mesh = SubResource("PlaneMesh_pj15q")
+
+[node name="Water" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 2)
+shape = SubResource("BoxShape3D_01uk3")

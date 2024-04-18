@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ceje4xnusn7yy"]
+[gd_scene load_steps=14 format=3 uid="uid://ceje4xnusn7yy"]
 
 [ext_resource type="PackedScene" uid="uid://bolp4wfnq5vnr" path="res://Scenes/Prefabs/player.tscn" id="1_qpyxx"]
 [ext_resource type="MeshLibrary" uid="uid://dtc8xhv6helra" path="res://Mesh/tiles.tres" id="2_g6d0i"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b11868766d8jh" path="res://Scenes/Prefabs/ButtonUIPrefab.tscn" id="2_ym7r0"]
 [ext_resource type="PackedScene" uid="uid://dibs3exkm3auv" path="res://Scenes/Tiles/water.tscn" id="3_1plic"]
 [ext_resource type="PackedScene" uid="uid://ckqfdjj5vu5n2" path="res://Scenes/Tiles/tree_forest_gltf.tscn" id="3_pmumu"]
+[ext_resource type="AudioStream" uid="uid://qxseonk3ybn1" path="res://Sounds/water_flowing.wav" id="5_82dqc"]
 
 [sub_resource type="Gradient" id="Gradient_o4o7r"]
 offsets = PackedFloat32Array(0.301887, 0.773585)
@@ -63,15 +64,50 @@ mesh_library = ExtResource("2_g6d0i")
 cell_size = Vector3(1, 1, 1)
 cell_scale = 0.5
 data = {
-"cells": PackedInt32Array(1, 0, 1441796, 0, 0, 1441796, 65535, 0, 1441796, 65534, 0, 1441796, 65533, 65535, 1441796, 65532, 65535, 1441796, 65531, 65535, 1441796, 65534, 65535, 1441796, 65535, 65535, 1441796, 0, 65535, 1441796, 1, 65535, 1441796, 1, 65534, 7, 0, 65534, 7, 65535, 65534, 7, 65534, 65534, 7, 65533, 65534, 7, 65532, 65534, 7, 65531, 65534, 7, 65531, 0, 1441796, 65532, 0, 1441796, 65533, 0, 1441796, 65534, 1, 1441796, 65535, 1, 1441796, 0, 1, 1441796, 1, 1, 1441796, 2, 1, 1441796, 65533, 1, 1441796, 65532, 2, 7, 65531, 1, 1441796, 65532, 1, 1441796, 65533, 2, 7, 65534, 2, 7, 65535, 2, 7, 0, 2, 7, 1, 2, 7, 2, 2, 7, 3, 1, 1441796, 3, 0, 1441796, 2, 65535, 1441796, 2, 65534, 7, 2, 0, 1441796, 3, 65535, 1441796, 3, 65534, 7, 3, 2, 7, 65531, 2, 7, 131068, 3, 1048586, 131067, 3, 1048586, 131067, 65535, 1048576, 131069, 1, 1048576, 131069, 0, 655360, 131066, 3, 5, 131066, 2, 10, 131066, 1, 10, 131066, 0, 10, 131066, 65535, 10, 131066, 65534, 10, 131068, 0, 1048596, 131068, 1, 1441809, 1, 65533, 1048583, 1, 65532, 1048583, 1, 65531, 1048583, 1, 65530, 1048583, 1, 65529, 1048583, 1, 65528, 1048583, 131073, 65528, 1048583, 131073, 65529, 1048583, 131073, 65530, 1048583, 131073, 65531, 1048583, 131073, 65532, 1048583, 131073, 65533, 1048583, 65538, 1, 1441813, 65538, 0, 655360, -1, 3, 655366, -65536, 3, 655366, -65536, 4, 655366, -1, 4, 655366, -1, 5, 655366, -65536, 5, 655366, -65535, 5, 655366, -65535, 4, 655366, -65535, 3, 655366, 65533, 3, 655367, 65534, 3, 655367, 65533, 4, 655367, 65534, 4, 655367, 65534, 5, 655367, 65534, 6, 655367, 65535, 6, 655367, 0, 6, 655367, 1, 6, 655367, 2, 6, 655367, 2, 5, 655367, 3, 5, 655367, 3, 4, 655367, 2, 4, 655367, 3, 3, 655367, 2, 3, 655367, 3, 6, 655367, 3, 7, 655367, 2, 7, 655367, 1, 7, 655367, 0, 7, 655367, 65535, 7, 655367, 65534, 7, 655367, 65533, 6, 655367, 65533, 5, 655367, 65533, 7, 655367)
+"cells": PackedInt32Array(1, 0, 1441796, 0, 0, 1441796, 65535, 0, 1441796, 65533, 65535, 1441796, 65532, 65535, 1441796, 65531, 65535, 1441796, 65534, 65535, 1441796, 65535, 65535, 1441796, 0, 65535, 1441796, 1, 65535, 1441796, 1, 65534, 7, 0, 65534, 7, 65535, 65534, 7, 65534, 65534, 7, 65533, 65534, 7, 65532, 65534, 7, 65531, 65534, 7, 65531, 0, 1441796, 65532, 0, 1441796, 65533, 0, 1441796, 0, 1, 1441796, 2, 1, 1441796, 65533, 1, 1441796, 65532, 2, 7, 65531, 1, 1441796, 65532, 1, 1441796, 65533, 2, 7, 65534, 2, 7, 2, 2, 7, 3, 1, 1441796, 3, 0, 1441796, 2, 65535, 1441796, 2, 65534, 7, 2, 0, 1441796, 3, 65535, 1441796, 3, 65534, 7, 3, 2, 7, 65531, 2, 7, 131068, 3, 1048586, 131067, 3, 1048586, 131067, 65535, 1048576, 131069, 1, 1048576, 131069, 0, 655360, 131066, 3, 5, 131066, 2, 10, 131066, 1, 10, 131066, 0, 10, 131066, 65535, 10, 131066, 65534, 10, 131068, 0, 1048596, 131068, 1, 1441809, 1, 65533, 1048583, 1, 65532, 1048583, 1, 65531, 1048583, 1, 65530, 1048583, 1, 65529, 1048583, 1, 65528, 1048583, 131073, 65528, 1048583, 131073, 65529, 1048583, 131073, 65530, 1048583, 131073, 65531, 1048583, 131073, 65532, 1048583, 131073, 65533, 1048583, 65538, 1, 1441813, 65538, 0, 655360, -1, 3, 655366, -65536, 3, 655366, -65535, 5, 655366, -65535, 3, 655366, 65533, 3, 655367, 65534, 3, 655367, 65533, 4, 655367, 65534, 4, 655367, 65534, 5, 655367, 65534, 6, 655367, 65535, 6, 655367, 0, 6, 655367, 1, 6, 655367, 2, 6, 655367, 2, 5, 655367, 3, 5, 655367, 3, 4, 655367, 2, 4, 655367, 3, 3, 655367, 2, 3, 655367, 3, 6, 655367, 3, 7, 655367, 2, 7, 655367, 1, 7, 655367, 0, 7, 655367, 65535, 7, 655367, 65534, 7, 655367, 65533, 6, 655367, 65533, 5, 655367, 65533, 7, 655367, -65536, 5, 655366, -1, 5, 655366, -1, 4, 655366, -65536, 4, 655366, -65535, 4, 655366, 1, 2, 7, 1, 1, 1441796, 65535, 2, 1441802, 0, 2, 1441802, 65534, 0, 1441796, 65534, 1, 1441796, 65535, 1, 1441796)
 }
-metadata/_editor_floor_ = Vector3(0, 1, 0)
-
-[node name="WaterNode" parent="GameScene/GridMapBetterTilesMAIN" instance=ExtResource("3_1plic")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1.25, 4.5)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="tree_forest_gltf" parent="GameScene/GridMapBetterTilesMAIN" instance=ExtResource("3_pmumu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, 3.5)
+
+[node name="water_node" type="Node3D" parent="GameScene/GridMapBetterTilesMAIN"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 1.1, 3.5)
+
+[node name="AudioListener3D" type="AudioStreamPlayer3D" parent="GameScene/GridMapBetterTilesMAIN/water_node"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2)
+stream = ExtResource("5_82dqc")
+attenuation_model = 2
+volume_db = 5.0
+max_db = 5.0
+autoplay = true
+max_distance = 30.0
+
+[node name="WaterNode" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+
+[node name="WaterNode2" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="WaterNode3" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="WaterNode4" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="WaterNode5" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="WaterNode6" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="WaterNode7" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="WaterNode8" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="WaterNode9" parent="GameScene/GridMapBetterTilesMAIN/water_node" instance=ExtResource("3_1plic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
 
 [node name="GridMapBIGGER" type="GridMap" parent="GameScene"]
 mesh_library = ExtResource("2_g6d0i")

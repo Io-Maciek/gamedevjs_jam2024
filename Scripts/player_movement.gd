@@ -1,13 +1,16 @@
 extends CharacterBody3D
-
+class_name PlayerMovement
 
 @export var RUN_SPEED_MULTIPLIER = 1.5;
 @export var SPEED = 5.0
 
 @export var SHOULD_JUMP_ABILITY: bool = true
+@export var SHOULD_CROUCH_ABILITY: bool = true
+
 @export var JUMP:float = 0.0 # jump multiplier
 @export var MAX_JUMP_VALUE:float = 5.0 
 @export var MIN_JUMP_VALUE:float = 5.0
+@export var is_in_water:bool = false
 
 var jump_was_big:bool = false
 var mouseAccumulatedMovement = Vector2(0, 0)
@@ -26,6 +29,7 @@ var _READY_FOR_NEXT_ANIMATION:bool = true # TODO
 @onready var audio_jump = $AudioStreamJump
 @onready var audio_wind = $AudioStreamWind
 @onready var audio_landing = $AudioStreamLanding
+@onready var audio_in_water_walking = $AudioStreamWalkinginWater
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -64,18 +68,26 @@ func _input(event):
 func HandleCrouch():
 	if is_pressing_jump:
 		return
+	if !SHOULD_CROUCH_ABILITY:
+		return
 		
 	#crouch_ray_cast.is_colliding()
 	var action_press = Input.is_action_pressed("crouch")
 	if action_press and is_on_floor():
-		if !is_crouched:
-			animation.play("crouch")
-		is_crouched = true
+		CrouchStart()
 	elif !action_press and !crouch_ray_cast.is_colliding():
-		if is_crouched:
-			animation.play_backwards("crouch")
-			animation.queue("idle_better")
-		is_crouched = false
+		CrouchEnd()
+
+func CrouchStart():
+	if !is_crouched:
+		animation.play("crouch")
+	is_crouched = true
+
+func CrouchEnd():
+	if is_crouched:
+		animation.play_backwards("crouch")
+		animation.queue("idle_better")
+	is_crouched = false
 
 func HandleJumping():
 	if is_crouched:
@@ -123,8 +135,10 @@ func Movement(delta):
 		velocity.y -= gravity * delta
 		
 	var speed_multiplier = 1.0
-	if !is_crouched and !is_pressing_jump and Input.is_action_pressed("run"):
+	if !is_crouched and !is_pressing_jump and Input.is_action_pressed("run") and !is_in_water:
 		speed_multiplier = RUN_SPEED_MULTIPLIER
+	elif is_in_water:
+		speed_multiplier = 0.37
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -136,6 +150,13 @@ func Movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * speed_multiplier)
 		velocity.z = move_toward(velocity.z, 0, SPEED * speed_multiplier)
+	
+	if is_in_water and (velocity.x!=0 or velocity.z!=0):
+		if !audio_in_water_walking.playing:
+			audio_in_water_walking.playing = true
+	else:
+		if audio_in_water_walking.playing:
+			audio_in_water_walking.playing = false
 
 	move_and_slide()
 

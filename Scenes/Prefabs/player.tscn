@@ -1,10 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bolp4wfnq5vnr"]
+[gd_scene load_steps=19 format=3 uid="uid://bolp4wfnq5vnr"]
 
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_7ad2g"]
+[ext_resource type="Script" path="res://Scripts/player_water_detector.gd" id="2_e1rs4"]
 [ext_resource type="AudioStream" uid="uid://bi1xi07psw187" path="res://Sounds/jump_loading4a.wav" id="2_rimic"]
 [ext_resource type="AudioStream" uid="uid://cop5o874db0uw" path="res://Sounds/jump2a.wav" id="3_4ha46"]
+[ext_resource type="AudioStream" uid="uid://dg1orwfmhnqyp" path="res://Sounds/walking_in_water.mp3" id="3_68pcu"]
 [ext_resource type="AudioStream" uid="uid://b30qgt0mrcdws" path="res://Sounds/wind.mp3" id="4_8uekh"]
 [ext_resource type="AudioStream" uid="uid://dudieertvnyud" path="res://Sounds/landing1.wav" id="5_rnbpo"]
+[ext_resource type="AudioStream" uid="uid://bxw8ifspq7hjb" path="res://Sounds/water_splash.mp3" id="8_hhy47"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iubs1"]
 radius = 0.4
@@ -450,6 +453,9 @@ _data = {
 "jumping_better": SubResource("Animation_vuk8m")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_efja7"]
+radius = 0.4
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_7ad2g")
 
@@ -479,6 +485,16 @@ libraries = {
 "": SubResource("AnimationLibrary_u7d04")
 }
 blend_times = [&"crouch", &"crouch", 0.25, &"crouch", &"idle_better", 0.25, &"jumping_better", &"idle_better", 0.15, &"jumping", &"idle", 0.5]
+
+[node name="WaterDetector" type="Area3D" parent="."]
+script = ExtResource("2_e1rs4")
+
+[node name="AudioStreamWaterPlum" type="AudioStreamPlayer" parent="WaterDetector"]
+stream = ExtResource("8_hhy47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+shape = SubResource("SphereShape3D_efja7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -510,4 +526,9 @@ stream = ExtResource("4_8uekh")
 [node name="AudioStreamLanding" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rnbpo")
 
+[node name="AudioStreamWalkinginWater" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_68pcu")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="WaterDetector" to="WaterDetector" method="_on_area_entered"]
+[connection signal="area_exited" from="WaterDetector" to="WaterDetector" method="_on_area_exited"]

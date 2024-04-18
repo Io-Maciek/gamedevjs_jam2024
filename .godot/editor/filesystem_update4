@@ -6,3 +6,5 @@ res://Shaders/water.tres
 res://Scenes/Tiles/water.tscn
 res://Scenes/Prefabs/cube1.tscn
 res://Scripts/GamePauser.gd
+res://Scripts/player_water_detector.gd
+res://Scripts/player_movement.gd
